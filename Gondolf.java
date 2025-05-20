@@ -14,6 +14,9 @@ public class Gondolf {
 	private Image imagenDerecha;
 	private Image imagenIzquierda;
 	private Image imagenActual;
+	public static final int ANCHO_PANTALLA = 1400; //estas tres variantes las ajustamos segun la resolucion
+	public static final int ALTO_PANTALLA = 1000;
+	public static final int ANCHO_MENU = 300; //esto es el ancho de la botonera
 	
 	public Gondolf(double x, double y) {
 		this.x = x;
@@ -35,7 +38,7 @@ public class Gondolf {
 			}
 		}
 		if(entorno.estaPresionada('s') || entorno.estaPresionada(entorno.TECLA_ABAJO)) {
-			if(y + velocidad < 600 - alto / 2) { //600 es el limite inferior
+			if(y + velocidad < ALTO_PANTALLA - alto / 2) { //600 es el limite inferior
 				y += velocidad;
 			}
 		}
@@ -46,7 +49,7 @@ public class Gondolf {
 			imagenActual = imagenIzquierda;
 		}
 		if(entorno.estaPresionada('d') || entorno.estaPresionada(entorno.TECLA_DERECHA)) {
-			if(x - velocidad < 800-200 - ancho / 2) { //200 es el ancho de la botonera
+			if(x + velocidad < ANCHO_PANTALLA - ANCHO_MENU - ancho / 2) { //200 es el ancho de la botonera
 				x += velocidad;
 			}
 			imagenActual = imagenDerecha;

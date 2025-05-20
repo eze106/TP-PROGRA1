@@ -18,8 +18,8 @@ public class Juego extends InterfaceJuego
 	Juego()
 	{
 		// Inicializa el objeto entorno
-		this.entorno = new Entorno(this, "Proyecto para TP", 800, 600);
-		this.gondolf = new Gondolf(400, 300); // centro de la pantalla
+		this.entorno = new Entorno(this, "Proyecto para TP", 1400, 1000);
+		this.gondolf = new Gondolf(700, 500); // centro de la pantalla
 		// Inicializar lo que haga falta para el juego
 		// ...
 
@@ -37,7 +37,7 @@ public class Juego extends InterfaceJuego
 	{
 		//fondo blanco
 		entorno.cambiarFont("Arial", 16, java.awt.Color.BLACK);
-		entorno.dibujarRectangulo(400, 300, 800, 600, 0, java.awt.Color.DARK_GRAY);
+		entorno.dibujarRectangulo(700, 500, 1400, 1000, 0, java.awt.Color.DARK_GRAY);
 		// Procesamiento de un instante de tiempo
 		// ...
 		
