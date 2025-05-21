@@ -11,6 +11,8 @@ public class Gondolf {
 	private double velocidad;
 	private int ancho = 40; //ancho imagen mago
 	private int alto = 40; //alto imagen mago
+	private Image imagenAbajo;
+	private Image imagenArriba;
 	private Image imagenDerecha;
 	private Image imagenIzquierda;
 	private Image imagenActual;
@@ -23,9 +25,10 @@ public class Gondolf {
 		this.y = y;
 		this.velocidad = 3;
 		
-		this.imagenDerecha = Herramientas.cargarImagen("Imagenes TP Programacion 1/Mago Derecha Opcion 1.png").getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-		this.imagenIzquierda = Herramientas.cargarImagen("Imagenes TP Programacion 1/Mago Izquierda Opcion 1.png").getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-		
+		this.imagenDerecha = Herramientas.cargarImagen("Imagenes TP Programacion 1/Mago Derecha Opcion 2.png").getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		this.imagenIzquierda = Herramientas.cargarImagen("Imagenes TP Programacion 1/Mago Izquierda Opcion 2.png").getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		this.imagenAbajo = Herramientas.cargarImagen("Imagenes TP Programacion 1/Mago Abajo Opcion 2.png").getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		this.imagenArriba = Herramientas.cargarImagen("Imagenes TP Programacion 1/Mago Arriba Opcion 2.png").getScaledInstance(50, 50, Image.SCALE_SMOOTH);
 		//empezamos con la imagen a la derecha
 		this.imagenActual = imagenDerecha;
 	
@@ -36,11 +39,13 @@ public class Gondolf {
 			if(y - velocidad > alto / 2) {//este if se puede hacer con &&
 				y -= velocidad;
 			}
+			imagenActual = imagenArriba;
 		}
 		if(entorno.estaPresionada('s') || entorno.estaPresionada(entorno.TECLA_ABAJO)) {
-			if(y + velocidad < ALTO_PANTALLA - alto / 2) { //600 es el limite inferior
+			if(y + velocidad < ALTO_PANTALLA - alto/2 ) { //600 es el limite inferior
 				y += velocidad;
 			}
+			imagenActual = imagenAbajo;
 		}
 		if(entorno.estaPresionada('a') || entorno.estaPresionada(entorno.TECLA_IZQUIERDA)) {
 			if(x - velocidad > ancho / 2) {
